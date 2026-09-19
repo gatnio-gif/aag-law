@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="משרד עורכי דין א.א.ג, אור יהודה. שלושה שותפים בכירים בדימוס ממשטרת ישראל, דין פלילי, דין מנהלי ורישוי עסקים.">
+<title>משרד עורכי דין א.א.ג</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;600;700&display=swap">
+<style>
+  :root{
+    --ink:#13212d;
+    --ink-2:#1d3346;
+    --paper:#f6f2e9;
+    --paper-2:#eee6d4;
+    --gold:#a9812f;
+    --gold-2:#c9a25a;
+    --steel:#5b6672;
+    --steel-dark:#9fb0bd;
+    --line:#ddd3ba;
+    --line-dark:rgba(255,255,255,0.14);
+    --white:#fdfbf6;
+    --font-display:'Frank Ruhl Libre', 'Times New Roman', serif;
+    --font-body:'Heebo', 'Segoe UI', Arial, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html, body{direction:rtl;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.7;
+    font-size:16px;
+  }
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:700;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  img,svg{max-width:100%;}
+
+  .wrap{
+    max-width:1080px;
+    margin-inline:auto;
+    padding-inline:20px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.1em;
+    color:var(--gold);
+    text-transform:none;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--ink);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding-block:14px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--white);
+  }
+  .brand-name{
+    font-family:var(--font-display);
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:.01em;
+  }
+  .brand-name small{
+    display:block;
+    font-family:var(--font-body);
+    font-size:.68rem;
+    font-weight:400;
+    color:var(--steel-dark);
+    letter-spacing:.05em;
+  }
+  nav.links{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+  }
+  nav.links a{
+    color:var(--steel-dark);
+    text-decoration:none;
+    font-size:.92rem;
+    font-weight:500;
+    transition:color .15s ease;
+  }
+  nav.links a:hover, nav.links a:focus-visible{color:var(--white);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5em;
+    padding:.85em 1.6em;
+    border-radius:2px;
+    font-weight:600;
+    font-size:.95rem;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-gold{
+    background:var(--gold);
+    color:var(--ink);
+  }
+  .btn-gold:hover, .btn-gold:focus-visible{background:var(--gold-2);}
+  .btn-ghost-dark{
+    background:transparent;
+    color:var(--white);
+    border-color:var(--line-dark);
+  }
+  .btn-ghost-dark:hover, .btn-ghost-dark:focus-visible{border-color:var(--gold);color:var(--gold-2);}
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--ink);
+  }
+  .btn-outline:hover, .btn-outline:focus-visible{border-color:var(--gold);color:var(--gold);}
+  .btn-sm{padding:.6em 1.2em;font-size:.85rem;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(120% 140% at 85% -10%, var(--ink-2), var(--ink) 60%);
+    color:var(--white);
+    overflow:hidden;
+  }
+  .hero-emblem{
+    position:absolute;
+    inset-inline-end:-8%;
+    top:-12%;
+    width:min(560px, 70vw);
+    opacity:.08;
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    padding-block:min(14vw, 108px) min(10vw, 84px);
+    max-width:760px;
+  }
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(2.1rem, 4.4vw + 1rem, 3.6rem);
+    line-height:1.16;
+    margin-top:18px;
+  }
+  .hero .lede{
+    margin-top:22px;
+    max-width:58ch;
+    color:var(--steel-dark);
+    font-size:1.08rem;
+    line-height:1.75;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:34px;
+  }
+  .rank-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    margin-top:56px;
+    padding-top:26px;
+    border-top:1px solid var(--line-dark);
+  }
+  .rank-item{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .rank-item .r-label{
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--steel-dark);
+  }
+  .rank-item .r-value{
+    font-family:var(--font-display);
+    font-size:1.05rem;
+    color:var(--gold-2);
+  }
+
+  /* ---------- sections ---------- */
+  section{padding-block:min(10vw, 92px);}
+  .section-head{
+    max-width:640px;
+    margin-bottom:44px;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem, 2.6vw + .8rem, 2.35rem);
+    margin-top:14px;
+  }
+
+  .about{
+    background:var(--white);
+    border-block:1px solid var(--line);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about p{
+    color:var(--steel);
+    font-size:1.04rem;
+  }
+  .about p + p{margin-top:16px;}
+  .then-now{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    padding:28px;
+    background:var(--paper);
+    border:1px solid var(--line);
+  }
+  .tn-item{display:flex;flex-direction:column;gap:4px;}
+  .tn-item .tn-k{font-size:.78rem;letter-spacing:.06em;color:var(--gold);font-weight:600;}
+  .tn-item .tn-v{font-family:var(--font-display);font-size:1.1rem;}
+  .tn-item + .tn-item{padding-top:22px;border-top:1px solid var(--line);}
+
+  .practice{background:var(--paper);}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:26px;
+  }
+  .p-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:30px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .p-card .icon{width:44px;height:44px;color:var(--gold);}
+  .p-card h3{font-size:1.2rem;}
+  .p-card p{color:var(--steel);font-size:.96rem;}
+
+  .partners{
+    background:var(--ink);
+    color:var(--white);
+  }
+  .partners .section-head h2{color:var(--white);}
+  .partners .section-head p{color:var(--steel-dark);}
+  .partner-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+  }
+  .partner-card{
+    padding:30px 26px;
+    background:var(--ink-2);
+    border:1px solid var(--line-dark);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .rank-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .rank-badge svg{width:30px;height:30px;color:var(--gold);flex:none;}
+  .rank-badge span{
+    font-size:.78rem;
+    letter-spacing:.05em;
+    color:var(--gold-2);
+    font-weight:600;
+  }
+  .partner-card h3{color:var(--white);font-size:1.15rem;}
+  .partner-note{
+    margin-top:8px;
+    padding-top:26px;
+    border-top:1px solid var(--line-dark);
+    color:var(--steel-dark);
+    font-size:.95rem;
+    max-width:70ch;
+  }
+
+  .trust{background:var(--white);border-block:1px solid var(--line);}
+  .trust-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+    gap:30px;
+  }
+  .trust-item{display:flex;flex-direction:column;gap:10px;}
+  .trust-item .t-num{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    color:var(--gold);
+  }
+  .trust-item h3{font-size:1.02rem;}
+  .trust-item p{color:var(--steel);font-size:.92rem;}
+
+  .contact{
+    background:var(--paper-2);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .contact-list{display:flex;flex-direction:column;gap:22px;}
+  .c-row{display:flex;gap:14px;align-items:flex-start;}
+  .c-row svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:3px;}
+  .c-row .c-k{font-size:.78rem;letter-spacing:.05em;color:var(--steel);}
+  .c-row .c-v{font-family:var(--font-display);font-size:1.15rem;color:var(--ink);}
+  .contact-cta{
+    background:var(--ink);
+    color:var(--white);
+    padding:36px 32px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .contact-cta h3{color:var(--white);font-size:1.3rem;}
+  .contact-cta p{color:var(--steel-dark);font-size:.95rem;}
+
+  footer{
+    background:var(--ink);
+    color:var(--steel-dark);
+    padding-block:26px;
+    font-size:.85rem;
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (max-width:760px){
+    .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .contact-grid{gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M30 5 L70 5 L96 30 L96 70 L70 96 L30 96 L4 70 L4 30 Z" stroke="#c9a25a"/>
+        <line x1="50" y1="24" x2="50" y2="72" stroke="#c9a25a" stroke-width="2"/>
+        <line x1="26" y1="36" x2="74" y2="36" stroke="#c9a25a" stroke-width="2"/>
+        <circle cx="26" cy="50" r="9" stroke="#c9a25a" stroke-width="1.8"/>
+        <circle cx="74" cy="50" r="9" stroke="#c9a25a" stroke-width="1.8"/>
+        <line x1="36" y1="80" x2="64" y2="80" stroke="#c9a25a" stroke-width="2"/>
+      </svg>
+      <span class="brand-name">משרד עורכי דין א.א.ג<small>אקסול · איפרגן · גטניו, אור יהודה</small></span>
+    </div>
+    <nav class="links">
+      <a href="#about">אודות</a>
+      <a href="#practice">תחומי עיסוק</a>
+      <a href="#partners">השותפים</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <a class="btn btn-gold btn-sm" href="#contact">לתיאום פגישה</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-emblem" viewBox="0 0 100 100" fill="none" stroke="#c9a25a" stroke-width="1.4">
+    <path d="M30 5 L70 5 L96 30 L96 70 L70 96 L30 96 L4 70 L4 30 Z"/>
+    <line x1="50" y1="24" x2="50" y2="72" stroke-width="1.1"/>
+    <line x1="26" y1="36" x2="74" y2="36" stroke-width="1.1"/>
+    <circle cx="26" cy="50" r="9" stroke-width="1"/>
+    <circle cx="74" cy="50" r="9" stroke-width="1"/>
+    <line x1="36" y1="80" x2="64" y2="80" stroke-width="1.1"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">משרד עורכי דין א.א.ג · אור יהודה</span>
+    <h1>לצדכם עומד מי שהכיר את המערכת מבפנים</h1>
+    <p class="lede">שלושה שותפים, שלושה קצינים בכירים בדימוס של משטרת ישראל, כיום עורכי דין העוסקים בדין הפלילי, בדין המנהלי וברישוי עסקים. שנים של ניסיון בחקירות, באכיפה ובממשק מול הרשויות עומדות היום לרשות הלקוחות שלנו.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="#contact">לתיאום פגישה</a>
+      <a class="btn btn-ghost-dark" href="#practice">תחומי העיסוק שלנו</a>
+    </div>
+    <div class="rank-strip">
+      <div class="rank-item"><span class="r-label">שותף</span><span class="r-value">ניצב (בגמלאות)</span></div>
+      <div class="rank-item"><span class="r-label">שותף</span><span class="r-value">תת ניצב (בגמלאות)</span></div>
+      <div class="rank-item"><span class="r-label">שותף</span><span class="r-value">ניצב משנה (בגמלאות)</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">היתרון שלנו</span>
+        <h2>ניסיון שאי אפשר ללמוד מספר</h2>
+      </div>
+      <p>שלושת השותפים במשרד שירתו שנים ארוכות במשטרת ישראל בדרגות בכירות. הם ישבו על הצד השני של השולחן, ניהלו חקירות, קיבלו החלטות אכיפה וליוו הליכי רישוי מתוך הרשות עצמה.</p>
+      <p>כשהם עוברים לצד של הלקוח, הם מביאים איתם לא רק ידע משפטי, אלא הבנה מדויקת של האופן שבו הגורמים שמולם אתם עומדים חושבים ופועלים בפועל.</p>
+    </div>
+    <div class="then-now">
+      <div class="tn-item">
+        <span class="tn-k">מאיפה הגענו</span>
+        <span class="tn-v">חקירות, אכיפה ורישוי בתוך משטרת ישראל</span>
+      </div>
+      <div class="tn-item">
+        <span class="tn-k">מה למדנו</span>
+        <span class="tn-v">איך מתקבלות ההחלטות שמולן אתם ניצבים</span>
+      </div>
+      <div class="tn-item">
+        <span class="tn-k">איפה זה עובד היום</span>
+        <span class="tn-v">לרשות התיק שלכם, מהפגישה הראשונה</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">תחומי עיסוק</span>
+      <h2>איפה אנחנו נכנסים לתמונה</h2>
+    </div>
+    <div class="card-grid">
+      <div class="p-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="10" y="8" width="20" height="9" rx="1" transform="rotate(-35 20 12.5)"/>
+          <line x1="22" y1="20" x2="10" y2="32"/>
+          <line x1="6" y1="40" x2="22" y2="40"/>
+          <line x1="14" y1="40" x2="14" y2="33"/>
+        </svg>
+        <h3>דין פלילי</h3>
+        <p>ייצוג בחקירות משטרה, בהליכי מעצר ושחרור, בכתבי אישום, בבקשות להשבת תפוסים ובערעורים. ליווי צמוד מהרגע הראשון של החקירה ועד תום ההליך.</p>
+      </div>
+      <div class="p-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 5 h16 l6 6 v32 h-22 z"/>
+          <path d="M29 5 v6 h6"/>
+          <line x1="18" y1="22" x2="30" y2="22"/>
+          <line x1="18" y1="29" x2="30" y2="29"/>
+          <line x1="18" y1="36" x2="26" y2="36"/>
+        </svg>
+        <h3>דין מנהלי</h3>
+        <p>התמודדות מול החלטות של רשויות אכיפה, צווי הגבלת שימוש והליכים משמעתיים. הכרות עם הדרך שבה מתקבלות ההחלטות האלה, מהצד שמקבל אותן בפועל.</p>
+      </div>
+      <div class="p-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="19" r="12"/>
+          <path d="M24 10 l2.6 5.4 5.9.6 -4.4 4 1.2 5.8 -5.3 -3 -5.3 3 1.2-5.8 -4.4-4 5.9-.6 Z"/>
+          <line x1="18" y1="29" x2="13" y2="43"/>
+          <line x1="30" y1="29" x2="35" y2="43"/>
+        </svg>
+        <h3>רישוי עסקים</h3>
+        <p>ליווי בהגשת בקשה לרישיון עסק, התמודדות עם תנאים ודרישות, ערעור על סירוב או שלילת רישיון וייצוג מול הרשות המקומית ומשטרת ישראל.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">השותפים במשרד</span>
+      <h2>שלוש דרגות, משרד אחד</h2>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="rank-badge">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M30 5 L70 5 L96 30 L96 70 L70 96 L30 96 L4 70 L4 30 Z"/>
+          </svg>
+          <span>ניצב (בגמלאות)</span>
+        </div>
+        <h3>עו"ד אהרון אקסול</h3>
+      </div>
+      <div class="partner-card">
+        <div class="rank-badge">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M30 5 L70 5 L96 30 L96 70 L70 96 L30 96 L4 70 L4 30 Z"/>
+          </svg>
+          <span>תת ניצב (בגמלאות)</span>
+        </div>
+        <h3>עו"ד חיים איפרגן</h3>
+      </div>
+      <div class="partner-card">
+        <div class="rank-badge">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M30 5 L70 5 L96 30 L96 70 L70 96 L30 96 L4 70 L4 30 Z"/>
+          </svg>
+          <span>ניצב משנה (בגמלאות)</span>
+        </div>
+        <h3>עו"ד יצחק גטניו</h3>
+      </div>
+    </div>
+    <p class="partner-note">שלושת השותפים עצמאים במשרד, וכל אחד מהם עוסק כעורך דין לצד הניסיון המקצועי שצבר לאורך שנות שירות ארוכות במשטרת ישראל.</p>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">איך אנחנו עובדים</span>
+      <h2>מה מקבלים כשפונים אלינו</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="t-num">01</span>
+        <h3>זמינות אישית</h3>
+        <p>הפנייה למשרד מגיעה ישירות לעורך הדין המטפל בתיק, לא לתא קולי.</p>
+      </div>
+      <div class="trust-item">
+        <span class="t-num">02</span>
+        <h3>הכרות מהשטח</h3>
+        <p>ידע מעשי בדרך שבה פועלות רשויות האכיפה, לא רק היכרות תיאורטית עם החוק.</p>
+      </div>
+      <div class="trust-item">
+        <span class="t-num">03</span>
+        <h3>דיסקרטיות מלאה</h3>
+        <p>ניהול התיק בשקט ובמקצועיות, בלי רעש מיותר סביב הלקוח.</p>
+      </div>
+      <div class="trust-item">
+        <span class="t-num">04</span>
+        <h3>ליווי מלא</h3>
+        <p>מהפגישה הראשונה ועד תום ההליך, כולל כל שלב מול הרשויות.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-list">
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <div><div class="c-k">כתובת המשרד</div><div class="c-v">רחוב החרושת 4, אור יהודה</div></div>
+      </div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><div class="c-k">דוא"ל</div><div class="c-v">gatnio@gmail.com</div></div>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <h3>נשמח לשמוע מכם</h3>
+      <p>ספרו לנו בקצרה על העניין, ונחזור אליכם לתיאום פגישה במשרד באור יהודה.</p>
+      <a class="btn btn-gold" href="mailto:gatnio@gmail.com?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%90%D7%AA%D7%A8%20%D7%94%D7%A0%D7%97%D7%99%D7%AA%D7%94">שליחת מייל למשרד</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>משרד עורכי דין א.א.ג · אור יהודה</span>
+    <span>© 2026 כל הזכויות שמורות</span>
+  </div>
+</footer>
+
+</body>
+</html>
