@@ -481,3 +481,12 @@ footer a:hover{color:var(--white);}
 .hero-logo{flex:none;width:clamp(72px,9vw,120px);height:auto;aspect-ratio:100/128;}
 .hero-inner{max-width:860px;}
 .hero-firm-partners .sep{font-style:normal;} @media (max-width:520px){.hero-firm-partners{display:flex;flex-direction:column;}.hero-firm-partners .sep{display:none;}}
+
+/* home: second section in the hero's colors */
+.about{background:var(--ink-2);border-block:1px solid var(--line-dark);}
+.about .section-head h2{color:var(--white);}
+.about p{color:#c9d3db;font-size:1.08rem;}
+.about .then-now{background:var(--ink);border-color:var(--line-dark);border-inline-start:3px solid var(--gold);}
+.about .tn-item .tn-k{color:var(--gold-2);font-size:.85rem;}
+.about .tn-item .tn-v{color:var(--white);font-size:1.18rem;}
+.about .tn-item + .tn-item{border-top-color:var(--line-dark);}
