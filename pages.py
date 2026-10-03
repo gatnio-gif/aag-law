@@ -7,7 +7,7 @@ ICON_PEN = '''<svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentC
 
 
 GALLERY = '''<div class="office-gallery">
-  <img src="images/office-room.jpg" alt="חדר פגישות במשרד א.א.ג באור יהודה" width="1200" height="900" loading="lazy">
+  <img src="images/office-partners.jpg" alt="השותפים במשרד עורכי הדין א.א.ג באור יהודה" width="634" height="476" loading="lazy">
   <img src="images/office-door-aksul.jpg" alt="דלת החדר של עו&quot;ד אהרון אקסול במשרד" width="1140" height="855" loading="lazy">
   <img src="images/office-door-gatenyo.jpg" alt="דלת החדר של עו&quot;ד יצחק גטניו במשרד" width="800" height="600" loading="lazy">
   <img src="images/office-door-ifergan.jpg" alt="שלט המשרד על דלת החדר של עו&quot;ד חיים אפרגן" width="990" height="660" loading="lazy">
