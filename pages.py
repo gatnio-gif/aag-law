@@ -13,6 +13,13 @@ GALLERY = '''<div class="office-gallery">
   <img src="images/office-door-ifergan.jpg" alt="שלט המשרד על דלת החדר של עו&quot;ד חיים איפרגן" width="990" height="660" loading="lazy">
 </div>'''
 
+# Direct lines, as printed on the office business card
+CONTACTS = {
+    "gatenyo": ("050-6274092", "0506274092", "gatnio@gmail.com"),
+    "ifergan": ("050-5537466", "0505537466", "afargan45@gmail.com"),
+    "aksul": ("050-7645841", "0507645841", "aksool@walla.com"),
+}
+
 PARTNERS = [
     ("aksul", 'עו"ד אהרון אקסול', "ניצב (בגמלאות)"),
     ("ifergan", 'עו"ד חיים איפרגן', "תת ניצב (בגמלאות)"),
@@ -138,13 +145,17 @@ def home(g):
 
 
 def contact_block(g):
+    order = ["gatenyo", "ifergan", "aksul"]
+    names = {k: n for k, n, _ in PARTNERS}
+    partner_rows = "\n".join(
+        f'''      <div class="c-row">{g["ICON_PHONE"]}<div><div class="c-k">{names[k]}</div><div class="c-v"><a href="tel:{CONTACTS[k][1]}">{CONTACTS[k][0]}</a></div><div class="c-mail"><a href="mailto:{CONTACTS[k][2]}">{CONTACTS[k][2]}</a></div></div></div>'''
+        for k in order)
     return f'''<section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div class="contact-list">
       <div class="c-row">{g["ICON_PIN"]}<div><div class="c-k">כתובת המשרד</div><div class="c-v">רחוב החרושת 4, אור יהודה</div></div></div>
-      <div class="c-row">{g["ICON_PHONE"]}<div><div class="c-k">נייד, עו"ד יצחק גטניו</div><div class="c-v"><a href="tel:{g["TEL"]}">{g["PHONE"]}</a></div></div></div>
+{partner_rows}
       <div class="c-row">{g["ICON_PHONE"]}<div><div class="c-k">טל' ופקס</div><div class="c-v"><a href="tel:035594333">03-5594333</a></div></div></div>
-      <div class="c-row">{g["ICON_MAIL"]}<div><div class="c-k">דוא"ל</div><div class="c-v"><a href="mailto:{g["EMAIL"]}">{g["EMAIL"]}</a></div></div></div>
     </div>
     <div class="contact-cta">
       <h3>נשמח לשמוע מכם</h3>
@@ -169,6 +180,7 @@ def partners(g):
         <h2>{n}</h2>
         <span class="rank">{r}</span>
         {bios[k]}
+        <p class="c-line">נייד: <a href="tel:{CONTACTS[k][1]}">{CONTACTS[k][0]}</a> · דוא"ל: <a href="mailto:{CONTACTS[k][2]}">{CONTACTS[k][2]}</a></p>
       </div>
     </article>''' for k, n, r in PARTNERS)
     body = f'''
