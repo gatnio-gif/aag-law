@@ -490,3 +490,11 @@ footer a:hover{color:var(--white);}
 .about .tn-item .tn-k{color:var(--gold-2);font-size:.85rem;}
 .about .tn-item .tn-v{color:var(--white);font-size:1.18rem;}
 .about .tn-item + .tn-item{border-top-color:var(--line-dark);}
+
+/* contrast fixes (WCAG AA) */
+:root{--gold-text:#7a5a1a;}
+.eyebrow,.tn-item .tn-k,.profile .rank,.p-card .more,.prose a,.c-row svg,.trust-item .t-num{color:var(--gold-text);}
+.eyebrow::before{background:var(--gold-text);}
+.hero .eyebrow,.page-hero .eyebrow,.partners .eyebrow,.about .eyebrow,.contact-cta .eyebrow{color:var(--gold-2);}
+.hero .eyebrow::before,.partners .eyebrow::before,.about .eyebrow::before{background:var(--gold-2);}
+.disclaimer{color:var(--steel-dark);}

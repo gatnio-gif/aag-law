@@ -25,6 +25,11 @@ ICON_PHONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-
 ICON_WA = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>'
 
 
+SCHEMA = '''<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"משרד עורכי דין א.א.ג","url":"https://aag-law.co.il/","telephone":"+972-50-627-4092","email":"gatnio@gmail.com","image":"https://aag-law.co.il/images/office-room.jpg","address":{"@type":"PostalAddress","streetAddress":"החרושת 4","addressLocality":"אור יהודה","addressCountry":"IL"},"areaServed":"IL","knowsAbout":["דין פלילי","צווי סגירה מנהליים","רישוי עסקים","ייפוי כוח מתמשך","צוואות"],"employee":[{"@type":"Person","name":"אהרון אקסול"},{"@type":"Person","name":"חיים אפרגן"},{"@type":"Person","name":"יצחק גטניו"}]}
+</script>'''
+
+
 def header(current):
     links = "\n".join(
         f'      <a href="{href}"{" aria-current=\"page\"" if href == current else ""}>{label}</a>'
@@ -81,6 +86,11 @@ def page(filename, title, description, body):
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{description}">
 <meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aag-law.co.il/{'' if filename == 'index.html' else filename}">
+<meta property="og:image" content="https://aag-law.co.il/images/office-room.jpg">
+<link rel="canonical" href="https://aag-law.co.il/{'' if filename == 'index.html' else filename}">
+{SCHEMA if filename == 'index.html' else ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;600&display=swap" rel="stylesheet">
