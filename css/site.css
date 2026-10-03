@@ -477,3 +477,7 @@ footer a:hover{color:var(--white);}
 .hero-firm-place{font-size:.9rem;letter-spacing:.06em;color:var(--steel-dark);}
 .hero h1{margin-top:30px;font-size:clamp(1.8rem,3.4vw + 1rem,3rem);}
 .hero-firm-partners span{white-space:nowrap;}
+.hero-head{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.hero-logo{flex:none;width:clamp(72px,9vw,120px);height:auto;aspect-ratio:100/128;}
+.hero-inner{max-width:860px;}
+.hero-firm-partners .sep{font-style:normal;} @media (max-width:520px){.hero-firm-partners{display:flex;flex-direction:column;}.hero-firm-partners .sep{display:none;}}
