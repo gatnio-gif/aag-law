@@ -26,7 +26,7 @@ ICON_WA = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path
 
 
 SCHEMA = '''<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"משרד עורכי דין א.א.ג","url":"https://aag-law.co.il/","telephone":"+972-50-627-4092","email":"gatnio@gmail.com","image":"https://aag-law.co.il/images/office-room.jpg","address":{"@type":"PostalAddress","streetAddress":"החרושת 4","addressLocality":"אור יהודה","addressCountry":"IL"},"areaServed":"IL","knowsAbout":["דין פלילי","צווי סגירה מנהליים","רישוי עסקים","ייפוי כוח מתמשך","צוואות"],"employee":[{"@type":"Person","name":"אהרון אקסול"},{"@type":"Person","name":"חיים אפרגן"},{"@type":"Person","name":"יצחק גטניו"}]}
+{"@context":"https://schema.org","@type":"LegalService","name":"משרד עורכי דין א.א.ג","url":"https://aag-law.co.il/","telephone":"+972-50-627-4092","email":"gatnio@gmail.com","image":"https://aag-law.co.il/images/office-partners.jpg","address":{"@type":"PostalAddress","streetAddress":"החרושת 4","addressLocality":"אור יהודה","addressCountry":"IL"},"areaServed":"IL","knowsAbout":["דין פלילי","צווי סגירה מנהליים","רישוי עסקים","ייפוי כוח מתמשך","צוואות"],"employee":[{"@type":"Person","name":"אהרון אקסול"},{"@type":"Person","name":"חיים אפרגן"},{"@type":"Person","name":"יצחק גטניו"}]}
 </script>'''
 
 
@@ -88,7 +88,7 @@ def page(filename, title, description, body):
 <meta property="og:locale" content="he_IL">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aag-law.co.il/{'' if filename == 'index.html' else filename}">
-<meta property="og:image" content="https://aag-law.co.il/images/office-room.jpg">
+<meta property="og:image" content="https://aag-law.co.il/images/office-partners.jpg">
 <link rel="canonical" href="https://aag-law.co.il/{'' if filename == 'index.html' else filename}">
 {SCHEMA if filename == 'index.html' else ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
