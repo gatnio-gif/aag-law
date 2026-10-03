@@ -470,3 +470,10 @@ footer a:hover{color:var(--white);}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
 .disclaimer{margin-top:10px;font-size:.78rem;color:var(--steel);}
 @media (max-width:820px){footer{padding-bottom:84px;}}
+
+.hero-firm{display:flex;flex-direction:column;gap:6px;padding-inline-start:16px;border-inline-start:3px solid var(--gold);}
+.hero-firm-name{font-family:var(--font-display);font-weight:700;font-size:clamp(1.6rem,2.4vw + 1rem,2.4rem);line-height:1.15;color:var(--gold-2);}
+.hero-firm-partners{font-size:clamp(1rem,.8vw + .8rem,1.2rem);font-weight:600;color:var(--white);}
+.hero-firm-place{font-size:.9rem;letter-spacing:.06em;color:var(--steel-dark);}
+.hero h1{margin-top:30px;font-size:clamp(1.8rem,3.4vw + 1rem,3rem);}
+.hero-firm-partners span{white-space:nowrap;}
