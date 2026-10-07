@@ -500,5 +500,39 @@ def article_alternatives(g):
     g["page"]("closure-alternatives.html", "תנאים במקום סגירה: מה אפשר להציע", "צו להגבלת שימוש לפי חוק הכניסה לישראל לא חייב להיות סגירה מלאה: מה אומר סעיף 12ב7, אילו תנאים אפשר להציע, ערובה, ושינוי תנאים אחרי שהצו ניתן.", body)
 
 
+def media(g):
+    items = [
+        ("חדשות 13", "3 בינואר 2025", "ראש צוות החקירה בפרשת \"משחקי חברה\": \"ייתכן שהיה אפשר לפעול אחרת\"",
+         "https://13tv.co.il/item/news/domestic/crime-and-justice/mhy3j-904404233/",
+         "ראיון עם נצ\"מ (בדימוס) יצחק גטניו, שעמד בראש צוות החקירה הראשון בפרשה בשנת 2013, על החקירה ועל הדרך שבה התנהלה."),
+        ("mynet בת ים", "10 ביולי 2024", "הרוצח הסדרתי מבת ים שזכה לכינוי \"חניבעל\"",
+         "https://batyam.mynet.co.il/local_news/article/rkd1jspvc",
+         "כתבה על פרשת ולדימיר פיניוב, רוצח חסרי הבית מבת ים, ועל החקירה שבה היה יצחק גטניו אחראי."),
+        ("ישראל היום", "3 באוקטובר 2021", "קציני משטרה בדימוס: \"הכוחות נכנסו בעיכוב לכפר קאסם\"",
+         "https://www.israelhayom.co.il/news/local/article/4849132",
+         "ניצב (בדימוס) אהרון אקסול ונצ\"מ (בדימוס) יצחק גטניו מנתחים את התנהלות המשטרה באירוע בכפר קאסם."),
+        ("הארץ", "31 במאי 2005", "כשהומלס נרצח, אף אחד לא מתלונן במשטרה",
+         "https://www.haaretz.co.il/misc/2005-05-31/ty-article/0000017f-ebc7-d4cd-af7f-ebff956d0000",
+         "כתבה על חסרי בית כקורבנות עבירה, ובה דבריו של יצחק גטניו על חקירת פרשת פיניוב."),
+    ]
+    cards = "".join(
+        f'<div class="step"><div><h3><a href="{u}" target="_blank" rel="noopener">{t}</a></h3>'
+        f'<p><strong>{o}</strong> · {d}</p><p>{x}</p></div></div>'
+        for o, d, t, u, x in items)
+    body = f"""
+{g["page_hero"]("בתקשורת", "השותפים בתקשורת", "כתבות וראיונות על חקירות שהשותפים במשרד ניהלו בשירותם במשטרת ישראל, ועל עמדותיהם המקצועיות.")}
+<section>
+  <div class="wrap layout-aside">
+    <div class="prose">
+      <div class="steps">{cards}</div>
+      <p>הקישורים מובילים לאתרי כלי התקשורת. הכתבות שייכות להם, והן משקפות את מה שפורסם במועד הפרסום.</p>
+    </div>
+    {g["aside"]("רוצים לדבר איתנו?", "ספרו לנו בקצרה במה מדובר, ונחזור אליכם לתיאום פגישה במשרד באור יהודה.", False)}
+  </div>
+</section>
+"""
+    g["page"]("media.html", "השותפים בתקשורת", "כתבות וראיונות על השותפים במשרד עורכי דין א.א.ג: פרשת \"משחקי חברה\", פרשת פיניוב בבת ים, ניתוח אירועים מקצועיים בחדשות 13, ישראל היום, mynet והארץ.", body)
+
+
 def build(g):
-    home(g); partners(g); criminal(g); administrative(g); lpa_wills(g); contact(g); accessibility(g); article_closure(g); article_fake_id(g); article_contractor(g); article_alternatives(g)
+    home(g); partners(g); criminal(g); administrative(g); lpa_wills(g); contact(g); accessibility(g); article_closure(g); article_fake_id(g); article_contractor(g); article_alternatives(g); media(g)

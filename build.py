@@ -11,6 +11,7 @@ EMAIL = "gatnio@gmail.com"
 NAV = [
     ("index.html", "בית"),
     ("partners.html", "השותפים"),
+    ("media.html", "בתקשורת"),
     ("criminal.html", "פלילי וחקירות"),
     ("administrative.html", "צווי סגירה ורישוי"),
     ("lpa-wills.html", "ייפוי כוח וצוואות"),
