@@ -92,6 +92,7 @@ def page(filename, title, description, body):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{full_title}</title>
 <meta name="description" content="{description}">
+<meta name="google-site-verification" content="pYk_-R_nlpT7qhjjnZ4RLSukkzTImKrjoBXJz0FqVh0" />
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{description}">
 <meta property="og:locale" content="he_IL">
