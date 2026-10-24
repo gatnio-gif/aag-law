@@ -161,6 +161,7 @@ def contact_block(g):
     <div class="contact-list">
       <div class="c-row">{g["ICON_PIN"]}<div><div class="c-k">כתובת המשרד</div><div class="c-v">רחוב החרושת 4, אור יהודה</div></div></div>
 {partner_rows}
+      <div class="c-row">{g["ICON_PIN"]}<div><div class="c-k">שעות קבלה</div><div class="c-v">ימים א' עד ה', 10:00 עד 16:00</div></div></div>
       <div class="c-row">{g["ICON_PHONE"]}<div><div class="c-k">טל' ופקס</div><div class="c-v"><a href="tel:035594333">03-5594333</a></div></div></div>
     </div>
     <div class="contact-cta">
