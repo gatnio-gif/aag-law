@@ -75,6 +75,14 @@ def footer():
 </script>'''
 
 
+def breadcrumb(filename, title):
+    import json
+    data = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "משרד עורכי דין א.א.ג", "item": "https://aag-law.co.il/"},
+        {"@type": "ListItem", "position": 2, "name": title, "item": "https://aag-law.co.il/" + filename}]}
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
+
 def page(filename, title, description, body):
     full_title = title if filename == "index.html" else f"{title} | משרד עורכי דין א.א.ג"
     html = f'''<!DOCTYPE html>
@@ -87,11 +95,15 @@ def page(filename, title, description, body):
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{description}">
 <meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="משרד עורכי דין א.א.ג">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aag-law.co.il/{'' if filename == 'index.html' else filename}">
 <meta property="og:image" content="https://aag-law.co.il/images/office-partners.jpg">
 <link rel="canonical" href="https://aag-law.co.il/{'' if filename == 'index.html' else filename}">
-{SCHEMA if filename == 'index.html' else ''}
+{SCHEMA if filename in ('index.html', 'contact.html') else ''}
+{breadcrumb(filename, title) if filename != 'index.html' else ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;600&display=swap" rel="stylesheet">
