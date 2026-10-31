@@ -84,6 +84,23 @@ def breadcrumb(filename, title):
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
 
 
+GA_ID = "G-48BTLB52HK"
+GA = """<script async src="https://www.googletagmanager.com/gtag/js?id=""" + GA_ID + """"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '""" + GA_ID + """');
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var h = a.getAttribute('href');
+  if (h.indexOf('tel:') === 0) gtag('event', 'click_call', {link_url: h});
+  else if (h.indexOf('wa.me') > -1) gtag('event', 'click_whatsapp', {link_url: h});
+  else if (h.indexOf('mailto:') === 0) gtag('event', 'click_email', {link_url: h});
+});
+</script>"""
+
 def page(filename, title, description, body):
     description = _esc(description, quote=True)
     full_title = title if filename == "index.html" else f"{title} | משרד עורכי דין א.א.ג"
@@ -111,6 +128,7 @@ def page(filename, title, description, body):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
+{GA}
 </head>
 <body>
 {header(filename)}
