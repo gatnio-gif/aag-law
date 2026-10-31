@@ -60,7 +60,7 @@ def footer():
   <div class="wrap">
     <div class="footer-row">
       <span>משרד עורכי דין א.א.ג · רחוב החרושת 4, אור יהודה · <a href="tel:{TEL}">{PHONE}</a> · שעות קבלה: א' עד ה', 10:00 עד 16:00</span>
-      <span class="footer-links"><a href="contact.html">צור קשר</a><a href="accessibility.html">הצהרת נגישות</a><span>© 2026 כל הזכויות שמורות</span></span>
+      <span class="footer-links"><a href="contact.html">צור קשר</a><a href="accessibility.html">הצהרת נגישות</a><a href="privacy.html">מדיניות פרטיות</a><span>© 2026 כל הזכויות שמורות</span></span>
     </div>
     <p class="disclaimer">המידע באתר הוא מידע כללי. הוא אינו ייעוץ משפטי ואינו תחליף לפגישה עם עורך דין שבוחן את הנסיבות של המקרה שלכם.</p>
   </div>
