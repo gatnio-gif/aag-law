@@ -1,6 +1,7 @@
 # Builds the site pages from one shared header and footer.
 # Run: python3 build.py   (writes the .html files next to this script)
 import os, re
+from html import escape as _esc
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PHONE = "050-6274092"
@@ -84,6 +85,7 @@ def breadcrumb(filename, title):
 
 
 def page(filename, title, description, body):
+    description = _esc(description, quote=True)
     full_title = title if filename == "index.html" else f"{title} | משרד עורכי דין א.א.ג"
     html = f'''<!DOCTYPE html>
 <html lang="he" dir="rtl">
